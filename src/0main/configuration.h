@@ -14,7 +14,7 @@
 
 ///////////////// wifi  //////////////////////////////
 // names below are used as AccessPoint name and calls from master
-#define NAME_ACCESSPOINT "DiagonAlley"
+#define NAME_ACCESSPOINT "VitrineLEDs"
 
 ///////////////// ledstrip  //////////////////////////////
 // gegevens over de ledstrip

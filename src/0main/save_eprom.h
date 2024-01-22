@@ -4,11 +4,11 @@
 
 
 void get_datafrom_eeprom () {
-  // Open Preferences with DiagonAlley namespace. Each application module, library, etc
+  // Open Preferences with VitrineLEDs namespace. Each application module, library, etc
   // has to use a namespace name to prevent key name collisions. We will open storage in
   // RW-mode (second parameter has to be false).
   // Note: Namespace name is limited to 15 chars.
-  pref_eeprom.begin("DiagonAlley", false);
+  pref_eeprom.begin("VitrineLEDs", false);
 
   String ssid_eeprom = pref_eeprom.getString("ssid_eeprom","");
   String pwd_eeprom = pref_eeprom.getString("pwd_eeprom","");
