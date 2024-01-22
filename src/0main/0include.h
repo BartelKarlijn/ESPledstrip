@@ -11,21 +11,14 @@
 #include <WiFi.h>           //
 #include <AsyncTCP.h>       // nodig voor de ESPAyncWebserver
 #include <ESPAsyncWebServer.h>
-#include <AsyncElegantOTA.h>
+#include <AsyncTCP.h>
+;#include <AsyncElegantOTA.h>
 #include <WebSerial.h>
-
-// Ledstrip
-//#include <FastLED.h>
-
-// PCA9865 servo/led driver
-//#include <Wire.h>
-//#include <Adafruit_PWMServoDriver.h>
 
 // Own libraries
 // variables
 #include <0main/configuration.h>
 #include <0main/globalvariables.h>
-// #include <0main/config_colors.h>
 
 // Own subroutines
 //   main
