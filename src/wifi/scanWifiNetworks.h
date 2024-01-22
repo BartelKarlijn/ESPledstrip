@@ -23,7 +23,7 @@ String scanWifiNetworks(){
       Print(": ");
       Print(WiFi.SSID(i));
       Print(" (");
-      Print(WiFi.RSSI(i));
+      Print(String(WiFi.RSSI(i)));
       Print(")");
       Println((WiFi.encryptionType(i) == WIFI_AUTH_OPEN)?" ":"*");
       delay(10);

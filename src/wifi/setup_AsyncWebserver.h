@@ -58,29 +58,6 @@ void setup_AsyncWebserver(){
     Println("fileStorage requested");
     request->send(200, "text/plain", listStorage(true));
   });
-  webserver.on("/getfileLoad2Kring", HTTP_GET, [](AsyncWebServerRequest *request) {
-    Println("Strip settings ophalen voor kring");
-    request->send(200, "text/plain", on_getfileLoad2Kring(request));
-  });
-  webserver.on("/getfileDefault2Kring", HTTP_GET, [](AsyncWebServerRequest *request) {
-    Println("Strip terug naar default zetten");
-    request->send(200, "text/plain", on_getfileDefault2Kring(request));
-  });
-  webserver.on("/getfileSaveKring", HTTP_GET, [](AsyncWebServerRequest *request) {
-    Println("Strip settings bewaren voor kring");
-    request->send(200, "text/plain", on_getfileSaveKring(request));
-  });
-  webserver.on("/getlistKringen", HTTP_GET, [](AsyncWebServerRequest *request) {
-    request->send(200, "text/plain", listKringen(true, on_getlistKringen(request)) );
-  });
-  webserver.on("/getStrip", HTTP_GET, [](AsyncWebServerRequest *request) {
-    //Println("getstrip binnen gekregen"); geen print want we krijgen er zo 10 binnen
-    request->send(200, "text/plain", on_getStrip(request));
-  });
-  webserver.on("/getSetStrip", HTTP_GET, [](AsyncWebServerRequest *request) {
-    Println("setstrip binnen gekregen");
-    request->send(200, "text/plain", on_getSetStrip(request));
-  });
   // webpages
   webserver.on("/page_fileManagement", HTTP_GET, [](AsyncWebServerRequest *request) {
     Println("FileManagement requested");
