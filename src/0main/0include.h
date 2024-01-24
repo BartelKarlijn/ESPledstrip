@@ -12,7 +12,7 @@
 #include <AsyncTCP.h>       // nodig voor de ESPAyncWebserver
 #include <ESPAsyncWebServer.h>
 #include <AsyncTCP.h>
-#include <AsyncElegantOTA.h>
+//#include <AsyncElegantOTA.h>
 //#include <ElegantOTA.h>
 #include <WebSerial.h>
 
