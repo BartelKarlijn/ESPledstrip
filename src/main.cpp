@@ -15,6 +15,7 @@ void setup() {
 }
 void loop() {
   currentMillis = millis();
+  //ElegantOTA.loop();
   show_fps();    // print om de zoveel tijd de fps
 //  showstrip();   // toon alles van de strip
 //  FastLED.show();
