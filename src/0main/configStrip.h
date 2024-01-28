@@ -1,7 +1,6 @@
 // definities van animaties en ledstrip
 // effecten leds
 #define EFFLED_AAN     10
-#define EFFLED_FIRE    11
 #define EFFLED_GLOW    12
 #define EFFLED_UIT     13
 
