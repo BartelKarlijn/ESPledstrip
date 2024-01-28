@@ -23,9 +23,9 @@
 //   main
 #include <0main/setupSerial.h>
 #include <0main/print.h>
+#include <0main/setupPins.h>
 #include <0main/save_eprom.h>
 // #include <0main/setupLed.h>
-// #include <0main/setupLedstrip.h>
 
 // Spiffs() integrated file system)
 #include <spiffs/humanReadableSize.h>

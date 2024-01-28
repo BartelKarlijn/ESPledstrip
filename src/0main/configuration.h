@@ -8,21 +8,33 @@
 #define SERIALSPEED 115200
 #define SHOWFPSEVERY 10000 //show fps every x msec
 
-///////////////// Pins  //////////////////////////////
-// already used in user_setup.h, and platformio.ini
-// Default pinmapping for SPI = MOSI gpio23, MISO gpio19, CLK gpio18, CS gpio5 (but this we're doing ourselves)
+///////////////// pins  //////////////////////////////
+#define PIN_L1 0
+#define PIN_L2 1
+#define PIN_L3 2
+#define PIN_L4 3
+#define PIN_L5 4
+#define PIN_R1 5
+#define PIN_R2 6
+#define PIN_R3 7
+#define PIN_R4 8
+#define PIN_R5 9
+
+#define PWM_CHANNEL_L1 0
+#define PWM_CHANNEL_L2 1
+#define PWM_CHANNEL_L3 2
+#define PWM_CHANNEL_L4 3
+#define PWM_CHANNEL_L5 4
+#define PWM_CHANNEL_R1 5
+#define PWM_CHANNEL_R2 6
+#define PWM_CHANNEL_R3 7
+#define PWM_CHANNEL_R4 8
+#define PWM_CHANNEL_R5 9
+
+///////////////// PWM frequency //////////////////////
+#define PWM_FREQUENCY 500
+#define PWM_RESOLUTION  8
 
 ///////////////// wifi  //////////////////////////////
 // names below are used as AccessPoint name and calls from master
 #define NAME_ACCESSPOINT "VitrineLEDs"
-
-///////////////// ledstrip  //////////////////////////////
-// gegevens over de ledstrip
-//#define STR_PIN 12
-//#define STR_BRIGHTNESS 125
-
-///////////////// PCA9865  //////////////////////////////
-// I2C pins zelf definieren
-#define I2C_SDA_PIN 21
-#define I2C_SCL_PIN 22
-#define I2C_FREQUENCY 400000
