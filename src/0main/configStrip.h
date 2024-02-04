@@ -27,7 +27,7 @@ const str_ledsingle LED_DEFAULT[LED_NR_ITEMS] {
 ,{"Onder5        ",  4,    9,    4,   125, 10000,   1000,   2500, EFFLED_GLOW }
 };
 
-str_ledsingle ledsingle[LED_NR_ITEMS];
+str_ledsingle ledsingle[LED_NR_ITEMS];     //variabele om de waarden in bij te houden (default, uitlezen of aangepast)
 unsigned long timer_led_aan[LED_NR_ITEMS];
 unsigned long time_led_eff[LED_NR_ITEMS];  //van begin aan tot eind van effect (gaat dus over meerder effecten heen)
 uint8_t effectledbri[LED_NR_ITEMS];

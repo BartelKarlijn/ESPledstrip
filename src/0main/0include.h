@@ -34,7 +34,7 @@
 #include <spiffs/setupSpiffs.h>
 #include <spiffs/writeFile.h>
 #include <spiffs/readFile.h>
-//#include <spiffs/fileDefault2Kring.h>
+#include <spiffs/fileDefault2Single.h>
 //#include <spiffs/fileLoad2Kring.h>
 //#include <spiffs/fileSaveKring.h>
 
