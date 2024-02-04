@@ -6,7 +6,8 @@
 
 typedef struct {
   char    desc[20];
-  int     pin;
+  int     pin1;
+  int     pin2;
   int     pwm_channel;
   int     bri;    //255 mogelijkheden
   unsigned long timeon;
@@ -16,19 +17,14 @@ typedef struct {
 } str_ledsingle;
 
 
-#define LED_NR_ITEMS 10
+#define LED_NR_ITEMS 5
 const str_ledsingle LED_DEFAULT[LED_NR_ITEMS] {
-//    description (20) ,pin, cha, brigh,timeon,timeoff,timeeff, eff
- {"LinksBoven1        ",  0,   0,   125, 10000,   1000,    150, EFFLED_AAN  }
-,{"Links2             ",  1,   1,   125, 10000,   1000,    150, EFFLED_AAN  }
-,{"Links3             ",  2,   2,   125, 10000,   1000,    150, EFFLED_AAN  }
-,{"Links4             ",  3,   3,   125, 10000,   1000,    150, EFFLED_AAN  }
-,{"LinksOnder5        ",  4,   4,   125, 10000,   1000,    150, EFFLED_AAN  }
-,{"RechtsBoven6       ",  5,   5,   125, 10000,   1000,    150, EFFLED_AAN  }
-,{"Rechts7            ",  6,   6,   125, 10000,   1000,    150, EFFLED_AAN  }
-,{"Rechts8            ",  7,   7,   125, 10000,   1000,    150, EFFLED_AAN  }
-,{"Rechts9            ",  8,   8,   125, 10000,   1000,    150, EFFLED_AAN  }
-,{"RechtsOnder10      ",  9,   9,   125, 10000,   1000,    150, EFFLED_AAN  }
+//    description (20) ,pin1, pin2, cha, brigh,timeon,timeoff,timeeff, eff
+ {"Boven1        ",  0,    5 ,   0,   125, 10000,   1000,    150, EFFLED_AAN  }
+,{"2             ",  1,    6,    1,   125, 10000,   1000,    150, EFFLED_AAN  }
+,{"3             ",  2,    7,    2,   125, 10000,   1000,    150, EFFLED_AAN  }
+,{"4             ",  3,    8,    3,   125, 10000,   1000,    150, EFFLED_AAN  }
+,{"Onder5        ",  4,    9,    4,   125, 10000,   1000,   2500, EFFLED_GLOW }
 };
 
 str_ledsingle ledsingle[LED_NR_ITEMS];

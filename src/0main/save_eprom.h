@@ -33,12 +33,6 @@ void get_datafrom_eeprom () {
   }
 }
 
-void save_ConfigToEeprom () {
-//  pref_eeprom.putUInt("mode_eeprom", operationMode);
-  
-  Println("Config saved");
-}
-
 void save_WIFIdatato_eeprom () {
   pref_eeprom.putString("ssid_eeprom", wifi_ssid);
   pref_eeprom.putString("pwd_eeprom" , wifi_pwd);
