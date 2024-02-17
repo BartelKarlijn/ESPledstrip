@@ -50,13 +50,13 @@
 // #include <ledstrip/str_party.h>
 // #include <ledstrip/str_uit.h>
 // #include <ledstrip/showstrip.h>
-// #include <ledstrip/loadAnimatie.h>
 
 //sigleled
 #include <singleled/led_aan.h>
 #include <singleled/led_glow.h>
 #include <singleled/led_uit.h>
 #include <singleled/showled.h>
+#include <singleled/loadAnimatie.h>
 
 //wifi
 #include <wifi/on_file.h>            // downloaden of verwijderen
