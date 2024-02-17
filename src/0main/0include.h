@@ -35,7 +35,7 @@
 #include <spiffs/writeFile.h>
 #include <spiffs/readFile.h>
 #include <spiffs/fileDefault2Single.h>
-//#include <spiffs/fileLoad2Kring.h>
+#include <spiffs/fileLoad2Single.h>
 //#include <spiffs/fileSaveKring.h>
 
 // fps
