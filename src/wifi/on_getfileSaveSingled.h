@@ -1,14 +1,14 @@
-String on_getfileSaveKring(AsyncWebServerRequest *request){
-    String kringString;
-    int kringnr;
-    // get parameter kring & veld  http://192.168.68.205/getfileLoad2Kring?kring=1
-    if (request->hasParam("kring")) {
-      kringString = request->getParam("kring")->value();
-      kringnr = kringString.toInt();
+String on_getfileSaveSingled(AsyncWebServerRequest *request){
+    String ledString;
+    int lednr;
+    // get parameter string & veld  http://192.168.68.205/getfileLoad2Kring?string=1
+    if (request->hasParam("string")) {
+      ledString = request->getParam("string")->value();
+      lednr = ledString.toInt();
     }
     else {
-      kringnr = 99;
+      lednr = 99;
     }
 
-    return fileSaveKring(kringnr);
+    return fileSaveSingle(lednr);
 }

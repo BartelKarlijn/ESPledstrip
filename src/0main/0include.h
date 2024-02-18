@@ -62,12 +62,11 @@
 #include <wifi/on_file.h>            // downloaden of verwijderen
 #include <wifi/on_fileUpload.h>
 #include <wifi/onOTA.h>
-//#include <wifi/on_getStrip.h>
-//#include <wifi/on_getSetStrip.h>
+#include <wifi/on_getSingled.h>
+#include <wifi/on_getSetSingled.h>
 #include <wifi/on_getfileLoad2Singled.h>
 #include <wifi/on_getfileDefault2Singled.h>
-//#include <wifi/on_getfileSaveKring.h>
-//#include <wifi/on_getlistKringen.h>
+#include <wifi/on_getfileSaveSingled.h>
 #include <wifi/on_wifisave.h>
 #include <wifi/setup_AsyncWebserver.h> 
 #include <wifi/setup_ConnectKnownWifi.h>

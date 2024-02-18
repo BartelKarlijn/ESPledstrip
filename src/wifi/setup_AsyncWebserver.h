@@ -49,6 +49,7 @@ void setup_AsyncWebserver(){
     Println("/stylesheet opgevraagd");
     request->send(SPIFFS, "/file_style.css", "text/css");
   });
+
   // dynamic actions
   webserver.on("/getfile", HTTP_GET, [](AsyncWebServerRequest * request){
     Println("file requested");
@@ -62,6 +63,27 @@ void setup_AsyncWebserver(){
     Println("fileStorage requested");
     request->send(200, "text/plain", listStorage(true));
   });
+    webserver.on("/getfileLoad2Singled", HTTP_GET, [](AsyncWebServerRequest *request) {
+    Println("Singled settings ophalen voor led");
+    request->send(200, "text/plain", on_getfileLoad2Singled(request));
+  });
+  webserver.on("/getfileDefault2Singled", HTTP_GET, [](AsyncWebServerRequest *request) {
+    Println("Strip terug naar default zetten");
+    request->send(200, "text/plain", on_getfileDefault2Singled(request));
+  });
+  webserver.on("/getfileSaveSingled", HTTP_GET, [](AsyncWebServerRequest *request) {
+    Println("Led settings bewaren voor strip");
+    request->send(200, "text/plain", on_getfileSaveSingled(request));
+  });
+  webserver.on("/getSingled", HTTP_GET, [](AsyncWebServerRequest *request) {
+    //Println("getSingled binnen gekregen"); geen print want we krijgen er zo 10 binnen
+    request->send(200, "text/plain", on_getSingled(request));
+  });
+  webserver.on("/getSetSingled", HTTP_GET, [](AsyncWebServerRequest *request) {
+    Println("setSingled binnen gekregen");
+    request->send(200, "text/plain", on_getSetSingled(request));
+  });
+
   // webpages
   webserver.on("/page_fileManagement", HTTP_GET, [](AsyncWebServerRequest *request) {
     Println("FileManagement requested");

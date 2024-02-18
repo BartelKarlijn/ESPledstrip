@@ -1,18 +1,18 @@
-String on_getSetStrip(AsyncWebServerRequest *request){
-    String kringString;
-    int kringnr;
+String on_getSetSingled(AsyncWebServerRequest *request){
+    String ledString;
+    int lednr;
     String veldString;
     int veldnr;
     String answertoSend;
     String waardeString;
     bool doeVerder;
-    // get parameter kring & veld & waarde http://192.168.68.205/maintain_strip?kring=1&veld=hue1&waarde=56
-    if (request->hasParam("kring")) {
-      kringString = request->getParam("kring")->value();
-      kringnr = kringString.toInt();
+    // get parameter string & veld & waarde http://192.168.68.205/maintain_strip?string=1&veld=pin1&waarde=56
+    if (request->hasParam("string")) {
+      ledString = request->getParam("string")->value();
+      lednr = ledString.toInt();
     }
     else {
-      kringnr = 255;
+      lednr = 255;
     }
     if (request->hasParam("veld")) {
       veldString = request->getParam("veld")->value();
@@ -35,91 +35,43 @@ String on_getSetStrip(AsyncWebServerRequest *request){
       switch (veldnr)
       {
       case 1:  //we beginnen bij 1, zodat 0 een fout geeft
-        kring[kringnr].desc     = waardeString;
+        ledsingle[lednr].desc     = waardeString;
         answertoSend = waardeString;
         break;
       case 2:
-        kring[kringnr].startled = waardeString.toInt();
+        ledsingle[lednr].pin1     = waardeString.toInt();
         answertoSend = waardeString;
         break;
       case 3:
-        kring[kringnr].stopled = waardeString.toInt();
+        ledsingle[lednr].pin2     = waardeString.toInt();
         answertoSend = waardeString;
         break;
       case 4:
-        kring[kringnr].hue1 = waardeString.toInt();
+        ledsingle[lednr].pwm_channel = waardeString.toInt();
         answertoSend = waardeString;
         break;
       case 5:
-        kring[kringnr].sat1 = waardeString.toInt();
+        ledsingle[lednr].bri      = waardeString.toInt();
         answertoSend = waardeString;
         break;
       case 6:
-        kring[kringnr].bri1 = waardeString.toInt();
+        ledsingle[lednr].timeon   = waardeString.toInt();
         answertoSend = waardeString;
         break;
       case 7:
-        kring[kringnr].hue2 = waardeString.toInt();
+        ledsingle[lednr].timeoff  = waardeString.toInt();
         answertoSend = waardeString;
         break;
       case 8:
-        kring[kringnr].sat2 = waardeString.toInt();
+        ledsingle[lednr].timeeffect = waardeString.toInt();
         answertoSend = waardeString;
         break;
       case 9:
-        kring[kringnr].bri2 = waardeString.toInt();
+        ledsingle[lednr].effect   = waardeString.toInt();
         answertoSend = waardeString;
         break;
       case 10:
-        kring[kringnr].hue3 = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 11:
-        kring[kringnr].sat3 = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 12:
-        kring[kringnr].bri3 = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 13:
-        kring[kringnr].hue4 = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 14:
-        kring[kringnr].sat4 = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 15:
-        kring[kringnr].bri4 = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 16:
-        kring[kringnr].every = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 17:
-        kring[kringnr].timeon = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 18:
-        kring[kringnr].timeoff = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 19:
-        kring[kringnr].timeeffect = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 20:
-        kring[kringnr].seed = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 21:
-        kring[kringnr].effect = waardeString.toInt();
-        answertoSend = waardeString;
-        break;
-      case 22:
-        kring[kringnr].image = waardeString;
+        ledsingle[lednr].image = waardeString.toInt();
         answertoSend = waardeString;
         break;
       default:
