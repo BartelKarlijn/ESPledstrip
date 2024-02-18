@@ -12,7 +12,9 @@
  		  //Beginwaarden ophalen voor storage
       $.get("/getfileStorage", function(data) {$("#storage").html(data) ;})
       $.get("/getfileList"   , function(data) {$("#fileList").html(data);})
+      getCommitInfo();
 		});
+    function getCommitInfo()   { $.get("/getCommitInfo", {}, function(data) {$("#CommitInfo").html(data);});};
   </script>
 </head>
 <body>
@@ -43,6 +45,7 @@
   <p id="detailsheader"></p>
   <p id="details"></p>
   <a href="/" class="button button-right button-large">Terug naar hoofdscherm</a>
+  <a id="CommitInfo" val=$get(getCommitInfo()) ></a>
 <script>
 function refreshFileList(){
   $.get("/getfileList"   , function(data) {$("#fileList").html(data);});

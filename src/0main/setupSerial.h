@@ -9,7 +9,7 @@ void setupSerial () {
 
   Serial.print("Commitpoint ");
   Serial.println(String(AUTO_COMMITPT) );
-  Serial.print("Compilation date ");
+  Serial.print("Compilation date "); 
   Serial.println( String(__DATE__) + " "  + String(__TIME__) );
 
   delay(100);

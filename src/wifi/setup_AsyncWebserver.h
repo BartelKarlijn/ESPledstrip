@@ -55,6 +55,10 @@ void setup_AsyncWebserver(){
     Println("file requested");
     on_file(request);
   });
+  webserver.on("/getCommitInfo", HTTP_GET, [](AsyncWebServerRequest * request){
+    Println("commitinfo requested");
+    request->send(200, "text/plain", on_getCommitInfo());
+  });
   webserver.on("/getfileList", HTTP_GET, [](AsyncWebServerRequest * request){
     Println("fileList requested");
     request->send(200, "text/plain", listFiles(true));

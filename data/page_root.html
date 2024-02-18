@@ -8,7 +8,9 @@
   <script src="file_jquery-3.7.0.min.js"></script>
   <script>
     $(document).ready(function() {
+      getCommitInfo();
 		});
+    function getCommitInfo()   { $.get("/getCommitInfo", {}, function(data) {$("#CommitInfo").html(data);});};
   </script>
 
 </head>
@@ -35,7 +37,6 @@
   <a href="/page_fileManagement" class="button button-right  button-large">File management</a>
   <a href="/webserial"           class="button button-right  button-large">Webserial</a>
   <a href="/update"              class="button button-right  button-large">Firmware Update</a>
-
-  %showfirmware info%
+  <a id="CommitInfo" val=$get(getCommitInfo()) ></a>
 </body>
 </html>

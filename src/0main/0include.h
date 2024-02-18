@@ -41,16 +41,6 @@
 // fps
 #include <0main/show_fps.h>
 
-//ledstrip
-// #include <ledstrip/listKringen.h>
-// #include <ledstrip/str_aan.h>
-// #include <ledstrip/str_chase.h>
-// #include <ledstrip/str_fire.h>
-// #include <ledstrip/str_glow.h>
-// #include <ledstrip/str_party.h>
-// #include <ledstrip/str_uit.h>
-// #include <ledstrip/showstrip.h>
-
 //sigleled
 #include <singleled/led_aan.h>
 #include <singleled/led_glow.h>
@@ -62,6 +52,7 @@
 #include <wifi/on_file.h>            // downloaden of verwijderen
 #include <wifi/on_fileUpload.h>
 #include <wifi/onOTA.h>
+#include <wifi/on_getCommitInfo.h>
 #include <wifi/on_getSingled.h>
 #include <wifi/on_getSetSingled.h>
 #include <wifi/on_getfileLoad2Singled.h>

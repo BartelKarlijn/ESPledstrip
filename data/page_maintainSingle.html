@@ -16,8 +16,9 @@
             console.log("string= "+$.urlParam('string'));
             getValuesJQ();          //Beginwaarden ophalen voor jq
             setonchangeValuesJQ();  //onchange voor jq elementen
-//            getValuePrevString();
-//            getValueNextString();
+            getValuePrevString();
+            getValueNextString();
+            getCommitInfo();
             setTimeout(getImage, 2000);
 		});
         function getValuesJQ() {
@@ -41,22 +42,23 @@
             console.log("img refreshed " + $('#10').val() )
             $('#file_img').attr( "src",  $('#10').val() );
         };
-//        function getValuePrevString() {
-//            var prevString = parseInt($.urlParam('string')) - 1;
-//            var prevDesc  = null;
-//            $.get("getStrip", {string: prevString, veld: "01" }, function(data){
-//                document.getElementById("PrevString").innerHTML = "Naar: " + data;
-//                document.getElementById("PrevString").href  = "/page_maintain_strip?string="+prevString;
-//            });
-//        };
-//        function getValueNextString() {
-//            var nextString = parseInt($.urlParam('string')) + 1;
-//            var nextDesc  = null;
-//            $.get("getStrip", {string: nextString, veld: "01" }, function(data){
-//                document.getElementById("NextString").innerHTML = "Naar: " + data;
-//                document.getElementById("NextString").href  = "/page_maintain_strip?string="+nextString;
-//            });
-//        };
+        function getValuePrevString() {
+            var prevString = parseInt($.urlParam('string')) - 1;
+            var prevDesc  = null;
+            $.get("getStrip", {string: prevString, veld: "01" }, function(data){
+                document.getElementById("PrevString").innerHTML = "Naar: " + data;
+                document.getElementById("PrevString").href  = "/page_maintain_strip?string="+prevString;
+            });
+        };
+        function getValueNextString() {
+            var nextString = parseInt($.urlParam('string')) + 1;
+            var nextDesc  = null;
+            $.get("getStrip", {string: nextString, veld: "01" }, function(data){
+                document.getElementById("NextString").innerHTML = "Naar: " + data;
+                document.getElementById("NextString").href  = "/page_maintain_strip?string="+nextString;
+            });
+        };
+        function getCommitInfo()   { $.get("/getCommitInfo", {}, function(data) {$("#CommitInfo").html(data);});};
         function fileSaveSingled()    { $.get("/getfileSaveSingled"     , {string: $.urlParam('string')} , function(data) {$("#status").html(data);}); };
         function fileDefault2Singled(){ $.get("/getfileDefault2Singled" , {string: $.urlParam('string')} , function(data) {$("#status").html(data);}); getValuesJQ(); };
         function fileLoad2Singled()   { $.get("/getfileLoad2Singled"    , {string: $.urlParam('string')} , function(data) {$("#status").html(data);}); getValuesJQ(); };
@@ -89,5 +91,6 @@
     <button onclick="fileLoad2Singled();"   class="button button-right button-large">Load from last save</button>
     <button onclick="fileDefault2Singled()" class="button button-right button-large">Reload defaults</button>
     <a href="/" class="button button-right button-large">Terug naar hoofdscherm</a>
+    <a id="CommitInfo" val=$get(getCommitInfo()) ></a>
 </body>
 </html>
