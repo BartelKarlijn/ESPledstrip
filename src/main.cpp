@@ -14,6 +14,7 @@ void setup() {
 }
 void loop() {
   currentMillis = millis();
+  delay(10);
   ElegantOTA.loop();
   
   showled();

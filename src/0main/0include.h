@@ -64,8 +64,8 @@
 #include <wifi/onOTA.h>
 //#include <wifi/on_getStrip.h>
 //#include <wifi/on_getSetStrip.h>
-//#include <wifi/on_getfileLoad2Kring.h>
-//#include <wifi/on_getfileDefault2Kring.h>
+#include <wifi/on_getfileLoad2Singled.h>
+#include <wifi/on_getfileDefault2Singled.h>
 //#include <wifi/on_getfileSaveKring.h>
 //#include <wifi/on_getlistKringen.h>
 #include <wifi/on_wifisave.h>
