@@ -2,7 +2,7 @@ String scanWifiNetworks(){
   String answertoSend;
 
   Println("");
-  Println("Disconnecting current wifi connection");
+  Println("Disconnecting current wifi connection to scan");
   WiFi.disconnect();
   delay(100);
   Println("start scan");

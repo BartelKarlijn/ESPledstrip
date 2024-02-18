@@ -1,15 +1,15 @@
 // definities van animaties en ledstrip
 // effecten leds
-#define EFFLED_AAN     10
+#define EFFLED_UIT     10
+#define EFFLED_AAN     11
 #define EFFLED_GLOW    12
-#define EFFLED_UIT     13
 
 //jpeg files
-#define IMG_BOVEN1 "file_img_boven1.jpg"
-#define IMG_2      "file_img_2.jpg"
-#define IMG_3      "file_img_3.jpg"
-#define IMG_4      "file_img_4.jpg"
-#define IMG_ONDER5 "file_img_onder5.jpg"
+#define IMG_BOVEN1 "file_img_1.png"
+#define IMG_2      "file_img_2.png"
+#define IMG_3      "file_img_3.png"
+#define IMG_4      "file_img_4.png"
+#define IMG_ONDER5 "file_img_5.png"
 
 typedef struct {
   String  desc;
@@ -27,7 +27,7 @@ typedef struct {
 
 #define LED_NR_ITEMS 5
 const str_ledsingle LED_DEFAULT[LED_NR_ITEMS] {
-//    description (20) ,pin1, pin2, cha, brigh,timeon,timeoff,timeeff, eff
+// description    ,pin1, pin2, cha, brigh,timeon,timeoff,timeeff, eff
  {"Boven1        ",  0,    5 ,   0,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_BOVEN1}
 ,{"2             ",  1,    6,    1,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_2     }
 ,{"3             ",  2,    7,    2,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_3     }

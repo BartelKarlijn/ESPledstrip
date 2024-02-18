@@ -27,20 +27,20 @@ void setup_AsyncWebserver(){
   webserver.on("/file_favicon.ico", HTTP_GET, [](AsyncWebServerRequest *request) {
     request->send(SPIFFS, "/file_favicon.ico", "image/png");
   });
-  webserver.on("/file_img_Olivander.jpg", HTTP_GET, [](AsyncWebServerRequest *request) {
-    request->send(SPIFFS, "/file_img_Olivander.jpg", "image/jpg");
+  webserver.on("/file_img_1.png", HTTP_GET, [](AsyncWebServerRequest *request) {
+    request->send(SPIFFS, "/file_img_1.png", "image/png");
   });
-  webserver.on("/file_img_Quiddich.jpg", HTTP_GET, [](AsyncWebServerRequest *request) {
-    request->send(SPIFFS, "/file_img_Quiddich.jpg", "image/jpg");
+  webserver.on("/file_img_2.png", HTTP_GET, [](AsyncWebServerRequest *request) {
+    request->send(SPIFFS, "/file_img_2.png", "image/png");
   });
-  webserver.on("/file_img_Weasley.jpg", HTTP_GET, [](AsyncWebServerRequest *request) {
-    request->send(SPIFFS, "/file_img_Weasley.jpg", "image/jpg");
+  webserver.on("/file_img_3.png", HTTP_GET, [](AsyncWebServerRequest *request) {
+    request->send(SPIFFS, "/file_img_3.png", "image/png");
   });
-  webserver.on("/file_img_Flourish.jpg", HTTP_GET, [](AsyncWebServerRequest *request) {
-    request->send(SPIFFS, "/file_img_Flourish.jpg", "image/jpg");
+  webserver.on("/file_img_4.png", HTTP_GET, [](AsyncWebServerRequest *request) {
+    request->send(SPIFFS, "/file_img_4.png", "image/png");
   });
-  webserver.on("/file_hue.jpg", HTTP_GET, [](AsyncWebServerRequest *request) {
-    request->send(SPIFFS, "/file_hue.jpg", "image/png");
+  webserver.on("/file_img_5.png", HTTP_GET, [](AsyncWebServerRequest *request) {
+    request->send(SPIFFS, "/file_img_5.png", "image/png");
   });
   webserver.on("/file_jquery-3.7.0.min.js", HTTP_GET, [](AsyncWebServerRequest *request) {
     request->send(SPIFFS, "/file_jquery-3.7.0.min.js", "text/javascript");
@@ -71,9 +71,9 @@ void setup_AsyncWebserver(){
     Println("Huisje requested");
     request->send(SPIFFS, "/page_huisje.html", "text/html");
   });
-  webserver.on("/page_maintain_strip", HTTP_GET, [](AsyncWebServerRequest *request) {
+  webserver.on("/page_maintainSingle", HTTP_GET, [](AsyncWebServerRequest *request) {
     Println("strip configuratie opgeroepen");
-    request->send(SPIFFS, "/page_maintain_strip.html", "text/html");
+    request->send(SPIFFS, "/page_maintainSingle.html", "text/html");
   });
   webserver.on("/page_wificfg", HTTP_GET, [](AsyncWebServerRequest *request) {
     Println("Wifi config pagina");

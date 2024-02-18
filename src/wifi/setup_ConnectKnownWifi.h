@@ -1,7 +1,9 @@
 void setup_ConnectKnownWifi(){
   Serial.println();
-  Serial.println("Disconnecting current wifi connection");
+  Serial.println("Disconnecting current wifi to connect again");
   WiFi.disconnect();
+  delay(100);
+  Serial.println("Disconnected");
   delay(100);
   WiFi.mode(WIFI_STA);    // connect to network
   
@@ -24,4 +26,5 @@ void setup_ConnectKnownWifi(){
     }
   }
   Serial.println(".");
+  delay(100);
 }
