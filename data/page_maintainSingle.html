@@ -45,17 +45,17 @@
         function getValuePrevString() {
             var prevString = parseInt($.urlParam('string')) - 1;
             var prevDesc  = null;
-            $.get("getStrip", {string: prevString, veld: "01" }, function(data){
+            $.get("getSingled", {string: prevString, veld: "01" }, function(data){
                 document.getElementById("PrevString").innerHTML = "Naar: " + data;
-                document.getElementById("PrevString").href  = "/page_maintain_strip?string="+prevString;
+                document.getElementById("PrevString").href  = "/page_maintainSingle?string="+prevString;
             });
         };
         function getValueNextString() {
             var nextString = parseInt($.urlParam('string')) + 1;
             var nextDesc  = null;
-            $.get("getStrip", {string: nextString, veld: "01" }, function(data){
+            $.get("getSingled", {string: nextString, veld: "01" }, function(data){
                 document.getElementById("NextString").innerHTML = "Naar: " + data;
-                document.getElementById("NextString").href  = "/page_maintain_strip?string="+nextString;
+                document.getElementById("NextString").href  = "/page_maintainSingle?string="+nextString;
             });
         };
         function getCommitInfo()   { $.get("/getCommitInfo", {}, function(data) {$("#CommitInfo").html(data);});};
