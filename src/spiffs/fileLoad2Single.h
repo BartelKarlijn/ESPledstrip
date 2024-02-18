@@ -1,10 +1,10 @@
 #pragma once
-String  fileLoad2Single(int kringnr) {
+String  fileLoad2Single(int lednr) {
 // Load ledSingle settings from file
   char filename[18];
   String msgAnswer;
 
-  sprintf(filename, "/cfg_kring%02d.ini", kringnr);
+  sprintf(filename, "/cfg_string%02d.ini", lednr);
 
   Print(String(filename));
 
@@ -43,9 +43,9 @@ String  fileLoad2Single(int kringnr) {
       doc["image"]
     };
 
-    ledsingle[kringnr]     = _ledsingle;
+    ledsingle[lednr]     = _ledsingle;
    
-    msgAnswer = ("Data opgehaald voor " + ledsingle[kringnr].desc);
+    msgAnswer = ("Data opgehaald voor " + ledsingle[lednr].desc);
     Print("  Desc: " + _ledsingle.desc + ", img: " + _ledsingle.image + ", eff: " + String(_ledsingle.effect)); delay(10);
   }
   return msgAnswer;

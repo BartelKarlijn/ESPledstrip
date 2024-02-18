@@ -13,7 +13,7 @@ void led_aan(int lednr) {
     ledcWrite(ledsingle[lednr].pwm_channel, 0 );
   }
   else {     //laat nog maar tijdje aan.
-
+    ledcWrite(ledsingle[lednr].pwm_channel, ledsingle[lednr].bri);
   }
 
 }
