@@ -23,7 +23,7 @@
         function getValuesJQ() {
             $('input[name="jq"]').each(function(ind, element) {
 				$(element).val(function(index, value){
-					$.get("getStrip", {string: $.urlParam('string'), veld: $(element).attr('id')}, function(data) {
+					$.get("getSingled", {string: $.urlParam('string'), veld: $(element).attr('id')}, function(data) {
 						$(element).val(data);
 					});
 				});
@@ -32,15 +32,15 @@
         function setonchangeValuesJQ(){
 			$('input[name="jq"]').each(function(ind, element) {
 				$(element).on("focusout", function(){
-					$.get("/getSetStrip", {string: $.urlParam('string'), veld: $(element).attr('id'), waarde: $(element).val()}, function(data) {
+					$.get("/getSetSingled", {string: $.urlParam('string'), veld: $(element).attr('id'), waarde: $(element).val()}, function(data) {
 					});
 				});
 			});
         };
-//        function getImage() {
-//            console.log("img refreshed " + $('#22').val() )
-//            $('#file_img').attr( "src",  $('#22').val() );
-//        };
+        function getImage() {
+            console.log("img refreshed " + $('#10').val() )
+            $('#file_img').attr( "src",  $('#10').val() );
+        };
 //        function getValuePrevString() {
 //            var prevString = parseInt($.urlParam('string')) - 1;
 //            var prevDesc  = null;
@@ -57,9 +57,9 @@
 //                document.getElementById("NextString").href  = "/page_maintain_strip?string="+nextString;
 //            });
 //        };
-        function fileSaveString()    { $.get("/getfileSaveString"     , {string: $.urlParam('string')} , function(data) {$("#status").html(data);}); };
-        function fileDefault2String(){ $.get("/getfileDefault2String" , {string: $.urlParam('string')} , function(data) {$("#status").html(data);}); getValuesJQ(); };
-        function fileLoad2String()   { $.get("/getfileLoad2String"    , {string: $.urlParam('string')} , function(data) {$("#status").html(data);}); getValuesJQ(); };
+        function fileSaveSingled()    { $.get("/getfileSaveSingled"     , {string: $.urlParam('string')} , function(data) {$("#status").html(data);}); };
+        function fileDefault2Singled(){ $.get("/getfileDefault2Singled" , {string: $.urlParam('string')} , function(data) {$("#status").html(data);}); getValuesJQ(); };
+        function fileLoad2Singled()   { $.get("/getfileLoad2Singled"    , {string: $.urlParam('string')} , function(data) {$("#status").html(data);}); getValuesJQ(); };
     </script>
 </head>
 
@@ -67,7 +67,7 @@
     <h1>Beheer effecten van ledstrip</h1>
     <div class="row">
         <div class="column3"><a id="PrevString" href="/" class='button button-center'></a></div>
-        <div class="column3"><h3><img id="file_img"  src="" onchange="getImage();"></img><br><input id='22' name='jq' type='text'   required/><br><input id='01' name='jq' type='text'   required/></h3></div>
+        <div class="column3"><h3><img id="file_img"  src="" onchange="getImage();"></img><br><input id='10' name='jq' type='text'   required/><br><input id='01' name='jq' type='text'   required/></h3></div>
         <div class="column3"><a id="NextString" href="/" class='button button-center'></a></div>
     </div>
     <div class="row">
@@ -82,12 +82,12 @@
     </div>
     <div class="row">
         <div class="column2">Brightness <br><input id='05' name='jq' type='number' min="0" max="255"/></div>
-        <div class="column2">Effect     <br><input id='08' name='jq' type='number' min="0" max="10" /><br>10: uit; 11:aan, 12: glow</div>
+        <div class="column2">Effect     <br><input id='09' name='jq' type='number' min="0" max="10" /><br>10: uit; 11:aan, 12: glow</div>
     </div>
     <p id="status"></p>
-    <button onclick="fileSaveString();"    class="button button-right button-large">Save settings</button>
-    <button onclick="fileLoad2String();"   class="button button-right button-large">Load from last save</button>
-    <button onclick="fileDefault2String()" class="button button-right button-large">Reload defaults</button>
+    <button onclick="fileSaveSingled();"    class="button button-right button-large">Save settings</button>
+    <button onclick="fileLoad2Singled();"   class="button button-right button-large">Load from last save</button>
+    <button onclick="fileDefault2Singled()" class="button button-right button-large">Reload defaults</button>
     <a href="/" class="button button-right button-large">Terug naar hoofdscherm</a>
 </body>
 </html>
