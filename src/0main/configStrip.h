@@ -16,10 +16,10 @@ typedef struct {
   int     pin1;
   int     pin2;
   int     pwm_channel;
-  int     bri;    //255 mogelijkheden
   unsigned long timeon;
   unsigned long timeoff;
   long    timeeffect;  //negatieve waarden toelaten
+  int     bri;    //255 mogelijkheden
   uint8_t effect;
   String  image;
 } str_ledsingle;

@@ -2,7 +2,8 @@ void setupLed(){
   // leds initialiseren met default
   for (size_t lednr = 0; lednr < LED_NR_ITEMS; lednr++) {
     
-    ledsingle[lednr] = LED_DEFAULT[lednr];
+    fileLoad2Single(lednr);
+//    ledsingle[lednr] = LED_DEFAULT[lednr];
     pinMode(ledsingle[lednr].pin1, OUTPUT);
     pinMode(ledsingle[lednr].pin2, OUTPUT);
     ledcSetup(ledsingle[lednr].pwm_channel, PWM_FREQUENCY, PWM_RESOLUTION);  //eenmalig frequentie opzetten

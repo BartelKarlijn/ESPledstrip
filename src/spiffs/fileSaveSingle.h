@@ -14,11 +14,11 @@ String  fileSaveSingle(int lednr) {
   doc["pin1"]        = ledsingle[lednr].pin1;
   doc["pin2"]        = ledsingle[lednr].pin2;
   doc["pwm_channel"] = ledsingle[lednr].pwm_channel;
+  doc["timeon"]      = ledsingle[lednr].timeon;
   doc["timeoff"]     = ledsingle[lednr].timeoff;
   doc["timeeffect"]  = ledsingle[lednr].timeeffect;
-  doc["effect"]      = ledsingle[lednr].effect;
-  doc["timeon"]      = ledsingle[lednr].timeon;
   doc["bri"]         = ledsingle[lednr].bri;
+  doc["effect"]      = ledsingle[lednr].effect;
   doc["image"]       = ledsingle[lednr].image;
 
   // write config file

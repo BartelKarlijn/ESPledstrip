@@ -35,15 +35,25 @@ String  fileLoad2Single(int lednr) {
       doc["pin1"],
       doc["pin2"],
       doc["pwm_channel"],
-      doc["bri"],
       doc["timeon"],
       doc["timeoff"],
       doc["timeeffect"],
+      doc["bri"],
       doc["effect"],
       doc["image"]
     };
 
-    ledsingle[lednr]     = _ledsingle;
+    ledsingle[lednr].desc        = _ledsingle.desc;
+    ledsingle[lednr].pin1        = _ledsingle.pin1;
+    ledsingle[lednr].pin2        = _ledsingle.pin2;
+    ledsingle[lednr].pwm_channel = _ledsingle.pwm_channel;
+    ledsingle[lednr].timeon      = _ledsingle.timeon;
+    ledsingle[lednr].timeoff     = _ledsingle.timeoff;
+    ledsingle[lednr].timeeffect  = _ledsingle.timeeffect;
+    ledsingle[lednr].bri         = _ledsingle.bri;
+    ledsingle[lednr].effect      = _ledsingle.effect;
+    ledsingle[lednr].image       = _ledsingle.image;
+
    
     msgAnswer = ("Data opgehaald voor " + ledsingle[lednr].desc);
     Print("  Desc: " + _ledsingle.desc + ", img: " + _ledsingle.image + ", eff: " + String(_ledsingle.effect)); delay(10);

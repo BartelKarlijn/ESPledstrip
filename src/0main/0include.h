@@ -25,7 +25,6 @@
 #include <0main/setupSerial.h>
 #include <0main/print.h>
 #include <0main/save_eprom.h>
-#include <0main/setupLed.h>
 
 // Spiffs() integrated file system)
 #include <spiffs/humanReadableSize.h>
@@ -41,6 +40,8 @@
 // fps
 #include <0main/show_fps.h>
 
+//main (needs to be after spiffs)
+#include <0main/setupLed.h>
 //sigleled
 #include <singleled/led_aan.h>
 #include <singleled/led_glow.h>
