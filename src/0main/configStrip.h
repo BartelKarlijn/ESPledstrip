@@ -28,16 +28,16 @@ typedef struct {
 #define LED_NR_ITEMS 10
 const str_ledsingle LED_DEFAULT[LED_NR_ITEMS] {
 // descr  ,pin1, pin2, cha, brigh,timeon,timeoff,timeeff, eff
- {"11L   ", 14,   32 ,   0,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_BOVEN1}
-,{"13L   ", 27,   32,    1,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_2     }
-,{"15L   ", 26,   32,    2,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_3     }
-,{"17L   ", 25,   32,    3,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_4     }
-,{"19L   ", 33,   32,    4,   125, 10000,   1000,   2500, EFFLED_GLOW , IMG_ONDER5}
-,{"12R   ", 16,   32,    5,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_BOVEN1}
-,{"14R   ", 17,   32,    6,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_2     }
-,{"16R   ", 18,   32,    7,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_3     }
-,{"18R   ", 22,   32,    8,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_4     }
-,{"20R   ", 23,   32,    9,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_ONDER5}
+ {"12R   ", 14,   32 ,   0,   125,   500,    500,    150, EFFLED_AAN  , IMG_BOVEN1}
+,{"14R   ", 27,   32,    1,   125,   500,    500,    150, EFFLED_AAN  , IMG_2     }
+,{"16R   ", 26,   32,    2,   125,   500,    500,    150, EFFLED_AAN  , IMG_3     }
+,{"18R   ", 25,   32,    3,   125,   500,    500,    150, EFFLED_AAN  , IMG_4     }
+,{"20R   ", 33,   32,    4,   125,   500,    500,    150, EFFLED_AAN , IMG_ONDER5}
+,{"11L   ", 16,   32,    5,   125,   500,    500,    150, EFFLED_AAN  , IMG_BOVEN1}
+,{"13L   ", 17,   32,    6,   125,   500,    500,    150, EFFLED_AAN  , IMG_2     }
+,{"15L   ", 18,   32,    7,   125,   500,    500,    150, EFFLED_AAN  , IMG_3     }
+,{"17L   ", 22,   32,    8,   125,   500,    500,    150, EFFLED_AAN  , IMG_4     }
+,{"19L   ", 23,   32,    9,   125,   500,    500,    150, EFFLED_AAN  , IMG_ONDER5}
 };
 
 str_ledsingle ledsingle[LED_NR_ITEMS];     //variabele om de waarden in bij te houden (default, uitlezen of aangepast)
