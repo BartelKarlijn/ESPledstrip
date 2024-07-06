@@ -4,7 +4,7 @@ void setup_CreateAccessPoint(){
   String nameConnectAP = NAME_ACCESSPOINT;
   nameConnectAP.toCharArray(autoConnectAP, 64);
 
-  if ((WiFi.waitForConnectResult() != WL_CONNECTED)) {
+  if ((WiFi.waitForConnectResult(1000) != WL_CONNECTED)) {
     Serial.println("Not connected to wifi; setup up Accespoint");
     Serial.println("Scanning Networks");
     WiFi.mode(WIFI_STA);
