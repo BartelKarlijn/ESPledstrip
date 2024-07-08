@@ -8,8 +8,7 @@ void led_glow(int lednr) {
   unsigned long timeBezig;
   uint8_t bri_glow;
 
-  timeBezig  = currentMillis - time_fase_beg[lednr];
-  if( timeBezig >= time_fase_end[lednr] ) {   // naar de volgende fase
+  if( currentMillis >= time_fase_end[lednr] ) {   // naar de volgende fase
     fase[lednr]++;
     time_fase_beg[lednr] = currentMillis;
     switch (fase[lednr]){
@@ -42,6 +41,7 @@ void led_glow(int lednr) {
     }
   }
 
+  timeBezig  = currentMillis - time_fase_beg[lednr];
   switch (fase[lednr])
   {
   case 2: // up
