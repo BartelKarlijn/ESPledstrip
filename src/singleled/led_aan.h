@@ -19,7 +19,7 @@ void led_aan(int lednr) {
         break;        
       default: //3 door ophoging of iets anders: gewoon zelfde als fase1
         time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
-        fase[lednr] = 1;
+        fase[lednr] = 0;
         break;
     }
   }
