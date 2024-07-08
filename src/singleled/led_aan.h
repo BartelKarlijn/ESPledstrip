@@ -1,19 +1,40 @@
 #pragma once
 
 void led_aan(int lednr) {
+  // Keeping on for timeOn
+  // Keeping on for timeOff
   unsigned long timeBezig;
+  uint8_t bri_glow;
 
-  timeBezig = currentMillis - timer_led_aan[lednr];
-
-  if( timeBezig > (ledsingle[lednr].timeon + ledsingle[lednr].timeoff) ) {   // lang genoeg uit geweest.  Nu aanzetten
-    ledcWrite(ledsingle[lednr].pwm_channel, ledsingle[lednr].bri);
-    timer_led_aan[lednr] = currentMillis; //reset timer
+  timeBezig  = currentMillis - time_fase_beg[lednr];
+  if( timeBezig >= time_fase_end[lednr] ) {   // naar de volgende fase
+    fase[lednr]++;
+    time_fase_beg[lednr] = currentMillis;
+    switch (fase[lednr]){
+      case 1:  //on fase
+        time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeon;
+        break;        
+      case 2:  //off fase
+        time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeoff;
+        break;        
+      default: //3 door ophoging of iets anders: gewoon zelfde als fase1
+        time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
+        fase[lednr] = 1;
+        break;
+    }
   }
-  else  if (timeBezig > ledsingle[lednr].timeon) { // lang genoeg aan geweest
-    ledcWrite(ledsingle[lednr].pwm_channel, 0 );
+  
+  switch (fase[lednr])
+  {
+  case 1: // on
+    bri_glow = ledsingle[lednr].bri;
+    break;
+  case 2: // off
+    bri_glow = 0;
+    break;
+  default:
+    bri_glow = 0;
+    break;
   }
-  else {     //laat nog maar tijdje aan.
-    ledcWrite(ledsingle[lednr].pwm_channel, ledsingle[lednr].bri);
-  }
-
+  ledcWrite(ledsingle[lednr].pwm_channel, bri_glow);
 }
