@@ -37,7 +37,7 @@ void led_glow(int lednr) {
       default: //6 door ophoging of iets anders: gewoon zelfde als fase1
         time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
         timer_led_aan[lednr] = currentMillis + ledsingle[lednr].timeon;
-        fase[lednr] = 2;
+        fase[lednr] = 0;
         break;
     }
   }
