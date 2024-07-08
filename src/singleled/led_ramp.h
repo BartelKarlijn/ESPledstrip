@@ -1,10 +1,9 @@
 #pragma once
 
-void led_glow(int lednr) {
+void led_ramp(int lednr) {
   // Ramping up for timeEffect
+  // Keeping on for timeOn
   // Ramping down for timeEffect
-  // repeating untill timeOn runs out.  Remark: we always do full glow cycle
-  // keeping off for timeOff
   unsigned long timeBezig;
   uint8_t bri_glow;
 
@@ -13,44 +12,37 @@ void led_glow(int lednr) {
     fase[lednr]++;
     time_fase_beg[lednr] = currentMillis;
     switch (fase[lednr]){
-      case 1:  //eerste glow
+      case 1:  //up fase
         time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
-        timer_led_aan[lednr] = currentMillis + ledsingle[lednr].timeon;
-        fase[lednr] = 2;
         break;        
-      case 2:  //up fase
+      case 2:  //on fase
+        time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeon;
+        break;        
+      case 3:  //donw fase
         time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
-        break;
-      case 3:  //down fase
+        break;        
+      case 4:  //off fase
+        time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeoff;
+        break;        
+      default: //5 door ophoging of iets anders: gewoon zelfde als fase1
         time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
-        break;
-      case 4:  //check if timeOn runs out
-        if( currentMillis >= timer_led_aan[lednr]) {
-          time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeoff;
-          fase[lednr] = 5;
-        }
-        else { //nieuw rondje op/af
-          time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
-          fase[lednr] = 2;
-        }
-        break;
-      default: //6 door ophoging of iets anders: gewoon zelfde als fase1
-        time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
-        timer_led_aan[lednr] = currentMillis + ledsingle[lednr].timeon;
-        fase[lednr] = 2;
+        fase[lednr] = 1;
         break;
     }
   }
 
   switch (fase[lednr])
   {
-  case 2: // up
+  case 1: // up
     bri_glow = map(timeBezig, time_fase_beg[lednr],  time_fase_end[lednr], 0, ledsingle[lednr].bri);
+    break;
+  case 2: // on
+    bri_glow = ledsingle[lednr].bri;
     break;
   case 3: // down
     bri_glow = map(timeBezig, time_fase_beg[lednr], time_fase_end[lednr], ledsingle[lednr].bri, 0);
     break;
-  case 5: // off
+  case 4: // off
     bri_glow = 0;
     break;
   default:
