@@ -17,7 +17,7 @@ void showled() {
         led_ramp(i);
         break;
     case EFFLED_RAND:
-        //led_rand(i);
+        led_rand(i);
         break;
     default:
         break;
