@@ -1,6 +1,6 @@
 #pragma once
 
-void led_ramp(int lednr) {
+void led_rand(int lednr) {
   // Ramping up for timeEffect
   // Keeping on for timeOn
   // Ramping down for timeEffect
@@ -16,7 +16,7 @@ void led_ramp(int lednr) {
         time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
         break;        
       case 2:  //on fase
-        time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeon;
+        time_fase_end[lednr] = currentMillis + random(ledsingle[lednr].timeon/2, ledsingle[lednr].timeon * 2);
         break;        
       case 3:  //donw fase
         time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
