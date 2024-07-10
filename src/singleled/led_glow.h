@@ -6,10 +6,10 @@ void led_glow(int lednr) {
   // repeating untill timeOn runs out.  Remark: we always do full glow cycle
   // keeping off for timeOff
   unsigned long timeBezig;
+  unsigned long timeEffect;
   uint8_t bri_glow;
 
-  timeBezig  = currentMillis - time_fase_beg[lednr];
-  if( timeBezig >= time_fase_end[lednr] ) {   // naar de volgende fase
+  if( currentMillis >= time_fase_end[lednr] ) {   // naar de volgende fase
     fase[lednr]++;
     time_fase_beg[lednr] = currentMillis;
     switch (fase[lednr]){
@@ -37,18 +37,20 @@ void led_glow(int lednr) {
       default: //6 door ophoging of iets anders: gewoon zelfde als fase1
         time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
         timer_led_aan[lednr] = currentMillis + ledsingle[lednr].timeon;
-        fase[lednr] = 2;
+        fase[lednr] = 0;
         break;
     }
   }
 
+  timeBezig  = currentMillis - time_fase_beg[lednr];
+  timeEffect = time_fase_end[lednr] - time_fase_beg[lednr];
   switch (fase[lednr])
   {
   case 2: // up
-    bri_glow = map(timeBezig, time_fase_beg[lednr],  time_fase_end[lednr], 0, ledsingle[lednr].bri);
+    bri_glow = map(timeBezig, 0,  timeEffect, 0, ledsingle[lednr].bri);
     break;
   case 3: // down
-    bri_glow = map(timeBezig, time_fase_beg[lednr], time_fase_end[lednr], ledsingle[lednr].bri, 0);
+    bri_glow = map(timeBezig, 0,  timeEffect, ledsingle[lednr].bri, 0);
     break;
   case 5: // off
     bri_glow = 0;

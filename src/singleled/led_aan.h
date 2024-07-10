@@ -6,8 +6,7 @@ void led_aan(int lednr) {
   unsigned long timeBezig;
   uint8_t bri_glow;
 
-  timeBezig  = currentMillis - time_fase_beg[lednr];
-  if( timeBezig >= time_fase_end[lednr] ) {   // naar de volgende fase
+  if( currentMillis >= time_fase_end[lednr] ) {   // naar de volgende fase
     fase[lednr]++;
     time_fase_beg[lednr] = currentMillis;
     switch (fase[lednr]){
@@ -19,11 +18,12 @@ void led_aan(int lednr) {
         break;        
       default: //3 door ophoging of iets anders: gewoon zelfde als fase1
         time_fase_end[lednr] = currentMillis + ledsingle[lednr].timeeffect;
-        fase[lednr] = 1;
+        fase[lednr] = 0;
         break;
     }
   }
   
+  timeBezig  = currentMillis - time_fase_beg[lednr];
   switch (fase[lednr])
   {
   case 1: // on

@@ -4,6 +4,7 @@
 #define EFFLED_AAN     11
 #define EFFLED_GLOW    12
 #define EFFLED_RAMP    13
+#define EFFLED_RAND    14
 
 //jpeg files
 #define IMG_BOVEN1 "file_img_1.png"

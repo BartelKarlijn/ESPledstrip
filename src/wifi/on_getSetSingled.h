@@ -71,7 +71,7 @@ String on_getSetSingled(AsyncWebServerRequest *request){
         answertoSend = waardeString;
         break;
       case 10:
-        ledsingle[lednr].image = waardeString.toInt();
+        ledsingle[lednr].image = waardeString;
         answertoSend = waardeString;
         break;
       default:
