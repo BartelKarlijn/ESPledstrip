@@ -5,6 +5,7 @@ void led_ramp(int lednr) {
   // Keeping on for timeOn
   // Ramping down for timeEffect
   unsigned long timeBezig;
+  unsigned long timeEffect;
   uint8_t bri_glow;
 
   if( currentMillis >= time_fase_end[lednr] ) {   // naar de volgende fase
@@ -36,16 +37,17 @@ void led_ramp(int lednr) {
   }
 
   timeBezig  = currentMillis - time_fase_beg[lednr];
+  timeEffect = time_fase_end[lednr] - time_fase_beg[lednr];
   switch (fase[lednr])
   {
   case 1: // up
-    bri_glow = map(timeBezig, time_fase_beg[lednr],  time_fase_end[lednr], 0, ledsingle[lednr].bri);
+    bri_glow = map(timeBezig, 0,  timeEffect, 0, ledsingle[lednr].bri);
     break;
   case 2: // on
     bri_glow = ledsingle[lednr].bri;
     break;
   case 3: // down
-    bri_glow = map(timeBezig, time_fase_beg[lednr], time_fase_end[lednr], ledsingle[lednr].bri, 0);
+    bri_glow = map(timeBezig, 0, timeEffect, ledsingle[lednr].bri, 0);
     break;
   case 4: // off
     bri_glow = 0;
