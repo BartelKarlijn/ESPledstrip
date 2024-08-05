@@ -14,6 +14,9 @@
 #include <ElegantOTA.h>
 #include <WebSerial.h>
 
+// Encoder
+#include <ESP32RotaryEncoder.h>
+
 // Own libraries
 // variables
 #include <0main/configuration.h>
@@ -25,6 +28,9 @@
 #include <0main/setupSerial.h>
 #include <0main/print.h>
 #include <0main/save_eprom.h>
+#include <0main/showEncoder.h>
+#include <0main/showButton.h>
+#include <0main/setupEncoder.h>
 
 // Spiffs() integrated file system)
 #include <spiffs/humanReadableSize.h>

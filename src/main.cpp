@@ -9,6 +9,7 @@ void setup() {
   startWifi();
   setupSpiffs();          // van het ESP32 file systeem lezen
   setupLed();
+  setupEncoder();
 //  loadAnimatie();         // ini file, terugvallen naar default
   SetupFinished();
 }

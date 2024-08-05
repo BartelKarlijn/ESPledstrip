@@ -14,4 +14,10 @@
 
 ///////////////// wifi  //////////////////////////////
 // names below are used as AccessPoint name and calls from master
-#define NAME_ACCESSPOINT "VitrineLEDs"
+#define NAME_ACCESSPOINT "Grot"
+
+///////////////// encoder  //////////////////////////////
+#define PIN_ENCODER_A 10
+#define PIN_ENCODER_B  9
+#define PIN_ENCODER_SW 5
+#define BUTTON_DEBOUNCE 50 //in ms

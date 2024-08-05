@@ -14,6 +14,10 @@ bool   flagWifiOn = false;
 const char* PARAM_ssid   = "ssid";     // voor de asyncwebserver
 const char* PARAM_pwd    = "pwd" ;     // voor de asyncwebserver
 
+
+//////// Encoder //////////
+RotaryEncoder rotaryEncoder(PIN_ENCODER_A, PIN_ENCODER_B, PIN_ENCODER_SW);
+
 //////// Timing //////////
 unsigned long currentMillis;
 unsigned long ota_progress_millis;

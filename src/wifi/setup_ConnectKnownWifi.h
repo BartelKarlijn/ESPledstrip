@@ -1,14 +1,20 @@
 void setup_ConnectKnownWifi(){
+/*
   Serial.println();
   Serial.println("Disconnecting current wifi to connect again");
-  //WiFi.disconnect();
+  WiFi.disconnect();
   delay(100);
   Serial.println("Disconnected");
   delay(100);
   WiFi.mode(WIFI_STA);    // connect to network
-  
-  WiFi.begin(wifi_ssid.c_str(), wifi_pwd.c_str());
+  Serial.println("wifi Station mode");
+  WiFi.useStaticBuffers(true);
+  Serial.println("Buffers");
   delay(100);
+*/
+  WiFi.begin(wifi_ssid.c_str(), wifi_pwd.c_str());
+  Serial.println("Begin wifi");
+  //delay(100);
 
   // Dit houden we zo'n 10 sec vol, als het dan niet lukt AP opzetten.
   Serial.println("Connecting to wifi");

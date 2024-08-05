@@ -27,14 +27,10 @@ typedef struct {
 } str_ledsingle;
 
 
-#define LED_NR_ITEMS 5
+#define LED_NR_ITEMS 1
 const str_ledsingle LED_DEFAULT[LED_NR_ITEMS] {
 // description    ,pin1, pin2, cha, brigh,timeon,timeoff,timeeff, eff
- {"Boven1        ",  0,    5 ,   0,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_BOVEN1}
-,{"2             ",  1,    6,    1,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_2     }
-,{"3             ",  2,    7,    2,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_3     }
-,{"4             ",  3,    8,    3,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_4     }
-,{"Onder5        ",  4,    9,    4,   125, 10000,   1000,   2500, EFFLED_GLOW , IMG_ONDER5}
+ {"Boven1        ",  2,    3 ,   0,   125, 10000,   1000,    150, EFFLED_AAN  , IMG_BOVEN1}
 };
 
 str_ledsingle ledsingle[LED_NR_ITEMS];     //variabele om de waarden in bij te houden (default, uitlezen of aangepast)
