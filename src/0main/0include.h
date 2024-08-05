@@ -28,9 +28,6 @@
 #include <0main/setupSerial.h>
 #include <0main/print.h>
 #include <0main/save_eprom.h>
-#include <0main/showEncoder.h>
-#include <0main/showButton.h>
-#include <0main/setupEncoder.h>
 
 // Spiffs() integrated file system)
 #include <spiffs/humanReadableSize.h>
@@ -56,6 +53,11 @@
 #include <singleled/led_uit.h>
 #include <singleled/showled.h>
 #include <singleled/loadAnimatie.h>
+
+// encoder
+#include <0main/showEncoder.h>
+#include <0main/showButton.h>
+#include <0main/setupEncoder.h>
 
 //wifi
 #include <wifi/on_file.h>            // downloaden of verwijderen

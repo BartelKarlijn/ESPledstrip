@@ -7,7 +7,9 @@ void setupEncoder(){
   // wrap around to the other side:
   //  - true  = turn past 10, wrap to 1; turn past 1, wrap to 10
   //  - false = turn past 10, stay on 10; turn past 1, stay on 1
-  rotaryEncoder.setBoundaries( 0, 10, false );
+  rotaryEncoder.setBoundaries( 0, 255, false );
+  rotaryEncoder.setStepValue(ENCODER_STEPS);
+  rotaryEncoder.setEncoderValue(ledsingle[0].bri );
 
   // The function specified here will be called every time the knob is turned
   // and the current value will be passed to it

@@ -21,3 +21,4 @@
 #define PIN_ENCODER_B  9
 #define PIN_ENCODER_SW 5
 #define BUTTON_DEBOUNCE 50 //in ms
+#define ENCODER_STEPS   15 //hoe grote stappen 0-255?
