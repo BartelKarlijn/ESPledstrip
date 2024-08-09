@@ -7,7 +7,7 @@ void setup_AsyncWebserver(){
   ElegantOTA.onEnd(onOTAEnd);
   
   // Analoog gaan we de WebSerial opstarten, zodat je kan zien wat er gebeurt
-  WebSerial.begin(&webserver);
+  //WebSerial.begin(&webserver);
 
   // if url isn't found
   webserver.onNotFound([](AsyncWebServerRequest *request) {

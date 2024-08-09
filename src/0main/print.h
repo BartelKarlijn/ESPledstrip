@@ -2,7 +2,7 @@
 void Print(String TXT){
   #ifdef PRINTWEBSERIAL
     if (flagWifiOn) {
-      WebSerial.print(TXT);
+//      WebSerial.print(TXT);
     }
   #endif
   #ifdef PRINTSERIAL
@@ -18,7 +18,7 @@ void Print(size_t i)       {Print(String(i));}
 
 void Println(String TXT){
   #ifdef PRINTWEBSERIAL
-    WebSerial.println(TXT);
+//    WebSerial.println(TXT);
   #endif
   #ifdef PRINTSERIAL
     Serial.println(TXT);

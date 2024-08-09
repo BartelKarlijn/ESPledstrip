@@ -11,8 +11,8 @@
 #include <WiFi.h>           //
 #include <AsyncTCP.h>       // nodig voor de ESPAyncWebserver
 #include <ESPAsyncWebServer.h>
-#include <ElegantOTA.h>
-#include <WebSerial.h>
+//#include <ElegantOTA.h>
+//#include <WebSerial.h>
 
 // Encoder
 #include <ESP32RotaryEncoder.h>
@@ -60,6 +60,7 @@
 #include <0main/setupEncoder.h>
 
 //wifi
+/*
 #include <wifi/on_file.h>            // downloaden of verwijderen
 #include <wifi/on_fileUpload.h>
 #include <wifi/onOTA.h>
@@ -75,3 +76,4 @@
 #include <wifi/setup_CreateAccessPoint.h>
 #include <wifi/startWifi.h>
 #include <wifi/scanWifiNetworks.h>
+*/
