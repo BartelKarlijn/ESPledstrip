@@ -3,7 +3,7 @@ Preferences pref_eeprom;           // to store & read parameters from eprom
 
 //////// Wifi //////////
 // Create AsyncWebServer object on port 80
-//AsyncWebServer webserver(80);
+AsyncWebServer webserver(80);
 //DNSServer dnsServer;    //Even afgezet want voor eigen AP wellicht niet nodig
 String wifi_ssid ;
 String wifi_pwd  ;
