@@ -12,7 +12,7 @@
 #include <AsyncTCP.h>       // nodig voor de ESPAyncWebserver
 #include <ESPAsyncWebServer.h>
 //#include <ElegantOTA.h>
-//#include <WebSerial.h>
+#include <WebSerial.h>
 
 // Encoder
 #include <ESP32RotaryEncoder.h>
