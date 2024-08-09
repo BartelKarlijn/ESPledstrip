@@ -60,7 +60,6 @@
 #include <0main/setupEncoder.h>
 
 //wifi
-/*
 #include <wifi/on_file.h>            // downloaden of verwijderen
 #include <wifi/on_fileUpload.h>
 #include <wifi/onOTA.h>
@@ -76,4 +75,3 @@
 #include <wifi/setup_CreateAccessPoint.h>
 #include <wifi/startWifi.h>
 #include <wifi/scanWifiNetworks.h>
-*/
