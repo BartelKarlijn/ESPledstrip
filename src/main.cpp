@@ -6,7 +6,7 @@
 void setup() {
   setupSerial();
   get_datafrom_eeprom (); // parameters uit eeprom halen (oa ssid/pw en PID)
-//  startWifi();
+  startWifi();
   setupSpiffs();          // van het ESP32 file systeem lezen
   setupLed();
   setupEncoder();
