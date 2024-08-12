@@ -11,7 +11,7 @@
 #include <WiFi.h>           //
 #include <AsyncTCP.h>       // nodig voor de ESPAyncWebserver
 #include <ESPAsyncWebServer.h>
-//#include <ElegantOTA.h>
+#include <ElegantOTA.h>
 #include <WebSerial.h>
 
 // Encoder

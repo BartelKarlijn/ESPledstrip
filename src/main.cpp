@@ -14,7 +14,7 @@ void setup() {
 }
 void loop() {
   currentMillis = millis();
-//  ElegantOTA.loop();
+  ElegantOTA.loop();
   
   showled();
   show_fps();    // print om de zoveel tijd de fps
