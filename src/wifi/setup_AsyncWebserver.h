@@ -10,6 +10,7 @@ void setup_AsyncWebserver(){
 
   // Analoog gaan we de WebSerial opstarten, zodat je kan zien wat er gebeurt
   WebSerial.begin(&webserver);
+  delay(500);
 
   // if url isn't found
   webserver.onNotFound([](AsyncWebServerRequest *request) {
@@ -121,4 +122,5 @@ void setup_AsyncWebserver(){
 
   // Start server
   webserver.begin();
+  delay(500);
 }
