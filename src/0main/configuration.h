@@ -15,7 +15,7 @@
 ///////////////// wifi  //////////////////////////////
 // names below are used as AccessPoint name and calls from master
 #define NAME_ACCESSPOINT "Grot"
-#define HOST_NAME        "Esp32_Grot"
+#define HOST_NAME        "Esp32C3_Grot"
 
 ///////////////// encoder  //////////////////////////////
 #define PIN_ENCODER_A 10
